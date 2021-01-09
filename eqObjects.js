@@ -34,15 +34,20 @@ const eqObjects = function(object1, object2) {
 const eqArrays = function(array1, array2) {
   let returnBool;
   if (array1.length === array2.length) {
+    returnBool = true;
     for (let x = 0; x < array1.length; x++) {
-      if (array1[x] === array2[x]) {
-        returnBool = true;
-      } else {
-        return false;
+      if (Array.isArray(array1[x]) && Array.isArray(array2[x])) {
+        returnBool = eqArrays(array1[x], array2[x]);
+      } else{
+        if (array1[x] === array2[x]) {
+          returnBool = true;
+        } else {
+          returnBool = false;
+        }
       }
     }
   } else {
-    return false;
+    returnBool = false;
   }
   return returnBool;
 };
@@ -62,9 +67,6 @@ assertEqual(eqObjects(cd, dc), true); // => true
 assertEqual(eqObjects(cd, cd2), false); // => false
 assertEqual(eqObjects(fg,gf), false); // => false
 assertEqual(eqObjects(ab,fg), false); // => false
-
-console.log("");
-
 assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
