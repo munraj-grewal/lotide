@@ -10,7 +10,7 @@ const countLetters = function(sentence) {
   sentence = sentence.split(" ").join("");
   console.log(sentence);
   let letterCount = {};
-  for (let letter of sentence){
+  for (let letter of sentence) {
     if (letterCount[letter]) {
       letterCount[letter] += 1;
     } else {
@@ -20,4 +20,4 @@ const countLetters = function(sentence) {
   return letterCount;
 };
 
-console.log(countLetters("lighthouse in the house"));
+assertEqual(countLetters("lighthouse in the house"),20);

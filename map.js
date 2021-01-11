@@ -4,7 +4,7 @@ const map = function(array, callback) {
     results.push(callback(element));
   });
   return results;
-}
+};
 
 const eqArrays = function(array1, array2) {
   let returnBool;
@@ -24,7 +24,6 @@ const eqArrays = function(array1, array2) {
 };
 
 const assertArraysEqual = function(array1, array2) {
-
   if (eqArrays(array1, array2)) {
     console.log(`✅✅✅Assertion Passed`);
   } else {
