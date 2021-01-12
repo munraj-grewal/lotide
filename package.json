@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@munraj-grewal/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "lotide assignment",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "tests"
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/munraj-grewal/lotide.git"
   },
-  "author": "",
+  "author": "Munraj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/munraj-grewal/lotide/issues"
